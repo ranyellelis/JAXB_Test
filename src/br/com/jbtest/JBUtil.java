@@ -14,8 +14,8 @@ public class JBUtil {
 		objetoParaXml(carro);
 		xmlParaObjeto();
 		
-		Validator validator = new Validator();
-		validator.validator("resources/carro.xsd", carro);
+//		Validator validator = new Validator();
+//		validator.validator("resources/carro.xsd", carro);
 	}
 
 	public static void objetoParaXml(Carro carro) throws JAXBException {
