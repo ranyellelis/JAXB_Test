@@ -13,7 +13,7 @@ public class JBUtilB {
 	public static void main(String[] args) throws JAXBException {
 		CarroB carroB = criaCarroB();
 		objetoParaXml(carroB);
-		xmlParaObjeto(carroB);
+		carroB = (CarroB) xmlParaObjeto(criaXml(), carroB);
 	}
 
 	public static void objetoParaXml(Object obj) throws JAXBException {
@@ -25,16 +25,7 @@ public class JBUtilB {
 		System.out.println(writer.toString());
 	}
 
-	public static Object xmlParaObjeto(Object obj) throws JAXBException {
-		StringBuilder xml = new StringBuilder();
-		xml.append("<carro>");
-		xml.append("<nome>Fusca</nome>");
-		xml.append("<portas>4</portas>");
-		xml.append("<motoristas>");
-		xml.append("<motorista nome=\"Joseph\"/>");
-		xml.append("</motoristas>");
-		xml.append("</carro>");
-
+	public static Object xmlParaObjeto(String xml, Object obj) throws JAXBException {
 		JAXBContext context = JAXBContext.newInstance(obj.getClass());
 		Unmarshaller unmarshaller = context.createUnmarshaller();
 		Object retorno = unmarshaller.unmarshal(new StringReader(xml.toString()));
@@ -51,5 +42,17 @@ public class JBUtilB {
 		carro.setPortas(4);
 		carro.getMotoristas().add(motorista);
 		return carro;
+	}
+	
+	public static String criaXml(){
+		StringBuilder xml = new StringBuilder();
+		xml.append("<carro>");
+		xml.append("<nome>Fusca</nome>");
+		xml.append("<portas>4</portas>");
+		xml.append("<motoristas>");
+		xml.append("<motorista nome=\"Joseph\"/>");
+		xml.append("</motoristas>");
+		xml.append("</carro>");
+		return xml.toString();
 	}
 }
