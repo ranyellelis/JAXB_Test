@@ -1,1 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><carro><nome>Fusca</nome><portas>4</portas><motoristas><nome>Joseph</nome></motoristas></carro>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<carro>
+	<nome>Fusca</nome>
+	<portas>4</portas>
+	<motoristas>
+		<nome>Joseph</nome>
+	</motoristas>
+</carro>

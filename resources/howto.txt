@@ -6,3 +6,7 @@ xjc carro.xsd -d src -p br.com.jbtest
 
 
 https://www.mballem.com/post/xml-trabalhando-com-jaxb/
+
+@XmlRootElement(name="pessoa")
+@XmlElement(name="pessoa")
+@XmlAttribute(name="nome")
